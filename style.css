@@ -513,6 +513,19 @@ section {
 
 .tools-section {
     background: var(--bg-secondary);
+    position: relative;
+}
+
+.tools-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #020617);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .tools-grid {
@@ -534,21 +547,24 @@ section {
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 280px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     isolation: isolate;
+    opacity: 1 !important;
 }
 
 .tool-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: #1e293b;
+    /* Removed background-color to let parent color show through */
     background-image: var(--bg-image);
     background-size: cover;
     background-position: center;
     transition: transform 0.7s ease;
-    z-index: -2;
+    z-index: 1;
+    opacity: 0.3;
+    filter: saturate(1.1);
 }
 
 .tool-card::after {
@@ -556,8 +572,20 @@ section {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(15, 23, 42, 0.9) 90%);
-    z-index: -1;
+    z-index: 1;
     pointer-events: none;
+}
+
+/* Ensure text is bright and on top */
+.tool-header,
+.tool-description,
+.tool-features,
+.btn-tool,
+.card-index {
+    position: relative;
+    z-index: 2;
+    opacity: 1 !important;
+    color: #ffffff;
 }
 
 .tool-card:hover::before {
@@ -566,7 +594,7 @@ section {
 
 .tool-card:hover {
     border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
     z-index: 5;
     transform: translateY(-2px);
 }
@@ -629,7 +657,7 @@ section {
 .featured-card:hover {
     border-color: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
 }
 
 .featured-card .card-index {
