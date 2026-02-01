@@ -323,6 +323,7 @@ a:hover {
 
 .btn-primary:hover {
     background: var(--primary-dark);
+    color: white;
     box-shadow: 0 6px 16px rgba(45, 91, 255, 0.3);
     transform: translateY(-1px);
 }
@@ -335,7 +336,7 @@ a:hover {
 
 .btn-secondary:hover {
     border-color: var(--primary);
-    color: var(--primary);
+    color: var(--primary-dark);
     background: var(--primary-light);
     transform: translateY(-1px);
 }
@@ -349,6 +350,7 @@ a:hover {
 
 .btn-tool:hover {
     background: var(--primary);
+    color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
