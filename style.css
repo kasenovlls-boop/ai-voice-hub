@@ -13,12 +13,12 @@ html {
 }
 
 :root {
-    /* Color Palette - Soft Tech Editorial */
-    --primary: #2D5BFF;
-    --primary-dark: #1A3DB8;
-    --primary-light: #E8EEFF;
-    --accent: #00D4AA;
-    --accent-dark: #00B491;
+    /* Color Palette - Minimalist Purple Theme */
+    --primary: #7c3aed;
+    --primary-dark: #6d28d9;
+    --primary-light: #f3e8ff;
+    --accent: #8b5cf6;
+    --accent-dark: #7c3aed;
     
     --text-primary: #0F172A;
     --text-secondary: #475569;
@@ -223,35 +223,16 @@ a:hover {
    ======================================== */
 
 .hero {
-    padding: var(--space-5xl) 0 var(--space-4xl); /* More air */
-    background: #0b0f19; /* Minimalist dark background */
+    padding: var(--space-3xl) 0 var(--space-2xl); /* Compact padding */
+    background: #020617; /* Solid Dark Background */
     position: relative;
     overflow: hidden;
     color: white;
 }
 
-/* Single Soft Glow (Minimalist) */
+/* Removed Glows for Clean Look */
 .hero-bg-glow {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.25; /* Softer */
-    z-index: 0;
-}
-
-.glow-center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #3b82f6, #8b5cf6);
-    animation: pulse-glow 8s ease-in-out infinite alternate;
-}
-
-@keyframes pulse-glow {
-    0% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.95); }
-    100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.05); }
+    display: none;
 }
 
 /* Removed Grain and multi-blob styles */
@@ -557,20 +538,20 @@ section {
 }
 
 .tool-card {
-    background: var(--bg-primary);
+    background: #FFFFFF; /* White card */
     border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-    box-shadow: var(--shadow-md);
+    padding: var(--space-lg);
+    box-shadow: none; /* Minimalist - no shadow */
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-light);
+    border: 1px solid #E2E8F0; /* Simple 1px border */
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.15); /* Soft premium glow */
-    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
 }
 
 .social-proof {
