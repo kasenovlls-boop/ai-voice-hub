@@ -652,14 +652,8 @@ section {
     padding: var(--space-xl);
     background: var(--bg-secondary);
     border-radius: var(--radius-md);
-    transition: all var(--transition-base);
     border: 1px solid transparent;
-}
-
-.use-case-card:hover {
-    background: var(--bg-primary);
-    border-color: var(--border);
-    transform: translateY(-2px);
+    cursor: default;
 }
 
 .use-case-icon {
