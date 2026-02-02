@@ -551,10 +551,21 @@ section {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-xl);
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    grid-template-areas:
+        "eleven eleven eleven"
+        "listnr listnr murf"
+        "speechify playht murf";
 }
+
+/* Grid Areas */
+.area-eleven { grid-area: eleven; }
+.area-listnr { grid-area: listnr; }
+.area-murf { grid-area: murf; }
+.area-speechify { grid-area: speechify; }
+.area-playht { grid-area: playht; }
 
 /* Tool Card Banner Style */
 .tool-card {
@@ -592,21 +603,32 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(15, 23, 42, 0.9) 90%);
+    /* Added vignette and darker gradient for better text contrast */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.95) 100%);
     z-index: 1;
     pointer-events: none;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5); /* Vignette effect */
 }
 
 /* Ensure text is bright and on top */
 .tool-header,
 .tool-description,
 .tool-features,
-.btn-tool,
-.card-index {
+.btn-tool {
     position: relative;
     z-index: 2;
     opacity: 1 !important;
-    color: #ffffff;
+    color: #FFFFFF !important; /* Enforce pure white */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Subtle shadow for readability */
+}
+
+/* Make text bolder */
+.tool-header h3 {
+    font-weight: 700;
+}
+
+.tool-description {
+    font-weight: 500; /* Increased from normal */
 }
 
 .tool-card:hover::before {
@@ -620,19 +642,8 @@ section {
     transform: translateY(-2px);
 }
 
-/* Card Index Number */
-.card-index {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-family: var(--font-display);
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.03);
-    line-height: 1;
-    pointer-events: none;
-    z-index: 0;
-}
+/* Card Index Number - Removed */
+/* .card-index { ... } */
 
 /* Partner/Featured Badge */
 .partner-badge {
@@ -1099,6 +1110,13 @@ section {
     /* Grid Adaptation */
     .tools-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "eleven"
+            "listnr"
+            "murf"
+            "speechify"
+            "playht";
         gap: var(--space-lg);
     }
     
