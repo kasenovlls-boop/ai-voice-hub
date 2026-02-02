@@ -1032,6 +1032,47 @@ section {
     text-align: center;
 }
 
+/* Footer Contact & Social Icons */
+.footer-contact {
+    margin-top: var(--space-lg);
+}
+
+.footer-contact p {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* ========================================
    MOBILE OPTIMIZATION
    ======================================== */
