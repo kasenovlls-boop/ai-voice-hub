@@ -42,13 +42,19 @@
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">AI Voice Tools</a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
                 <div class="main-nav">
                     <a href="index.html">Home</a>
                     <a href="index.html#tools">Tools</a>
                     <a href="murf-vs-elevenlabs.html">Comparisons</a>
                     <a href="how-to-make-money-with-ai-voice.html">Blog</a>
+                    <a href="#tools" class="mobile-only-cta">Start Creating</a>
                 </div>
-                <a href="#tools" class="btn-nav-cta">Start Creating</a>
+                <a href="#tools" class="btn-nav-cta desktop-only">Start Creating</a>
             </div>
         </div>
     </nav>
@@ -56,7 +62,17 @@
 
     <main>
         <section class="hero">
-            <div class="container">
+        <div class="hero-waveform">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Purple Line -->
+                <path d="M0,160 C320,300, 420,0, 720,160 C1020,320, 1120,0, 1440,160" stroke="#8b5cf6" stroke-width="2" fill="none" opacity="0.5"/>
+                <!-- Blue Line -->
+                <path d="M0,160 C280,20, 500,280, 720,160 C940,40, 1160,280, 1440,160" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.5"/>
+                <!-- White Line (Subtle) -->
+                <path d="M0,160 C360,240, 480,80, 720,160 C960,240, 1080,80, 1440,160" stroke="white" stroke-width="1" fill="none" opacity="0.2"/>
+            </svg>
+        </div>
+        <div class="container">
                 <div class="hero-content">
                     <h1 class="fade-in">Give Your Content the Perfect <span class="gradient-text">AI Voice</span></h1>
                     <p class="hero-subtitle fade-in-delay">Discover the best AI speech synthesis tools to transform your text into human-like audio in seconds. Trusted by 2026 creators.</p>
@@ -305,5 +321,36 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileBtn && mainNav) {
+                mobileBtn.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    const isExpanded = mainNav.classList.contains('active');
+                    mobileBtn.setAttribute('aria-expanded', isExpanded);
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mainNav.contains(event.target) && !mobileBtn.contains(event.target) && mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Close menu when clicking a link
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('active');
+                        mobileBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
