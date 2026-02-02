@@ -924,6 +924,61 @@ section {
 }
 
 /* ========================================
+   ARTICLE & BLOG
+   ======================================== */
+
+.partner-disclosure {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--space-xl);
+    color: var(--text-muted);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: var(--space-xl);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Forces scroll on small screens */
+}
+
+th, td {
+    padding: var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+td {
+    color: var(--text-secondary);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
    CTA SECTION
    ======================================== */
 
