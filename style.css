@@ -1269,6 +1269,42 @@ tr:last-child td {
     font-size: 0.9rem;
 }
 
+/* Social Icons */
+.footer-contact {
+    margin-top: var(--space-lg);
+}
+
+.footer-contact p {
+    margin-bottom: var(--space-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-link {
+    color: var(--text-secondary);
+    transition: color var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: var(--primary); /* Brand purple/blue */
+}
+
+.social-link svg {
+    width: 22px; /* 20px-24px */
+    height: 22px;
+    stroke-width: 2;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
