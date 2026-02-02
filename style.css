@@ -1216,6 +1216,31 @@ tr:last-child td {
 }
 
 /* ========================================
+   FAQ Section
+   ======================================== */
+
+.faq-item {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-item h3 {
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 
