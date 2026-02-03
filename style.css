@@ -600,15 +600,15 @@ section {
     grid-template-areas:
         "eleven eleven eleven"
         "listnr listnr murf"
-        "speechify playht murf";
+        "fliki synthesys murf";
 }
 
 /* Grid Areas */
 .area-eleven { grid-area: eleven; }
 .area-listnr { grid-area: listnr; }
 .area-murf { grid-area: murf; }
-.area-speechify { grid-area: speechify; }
-.area-playht { grid-area: playht; }
+.area-fliki { grid-area: fliki; }
+.area-synthesys { grid-area: synthesys; }
 
 /* Tool Card Banner Style */
 .tool-card {
@@ -729,13 +729,7 @@ section {
     display: none;
 }
 
-/* Play.ht Card Specific Fix */
-.playht-card::before {
-    background-image: url('http://googleusercontent.com/image_collection/image_retrieval/335451397585093898_2') !important;
-    background-color: #4f46e5 !important;
-    background-size: cover;
-    background-position: center;
-}
+
 
 /* Featured Card Style (Banner) */
 .featured-card {
