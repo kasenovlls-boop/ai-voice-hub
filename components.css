@@ -3,20 +3,32 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #ff00ff;
-    color: white;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    background: rgba(30, 30, 30, 0.6); /* Полупрозрачный темный фон */
+    backdrop-filter: blur(12px); /* Эффект дорогого стекла */
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая грань */
+    border-radius: 12px; /* Мягкий квадрат (Squircle) как в iOS/Stripe */
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 18px;
-    transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    font-size: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    /* Flexbox properties for centering, but display: none takes precedence for initial visibility */
+    align-items: center;
+    justify-content: center;
 }
 
 #backToTop:hover {
-    background-color: #00ffff;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.95); /* Инверсия при наведении */
+    color: #000000;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-color: #ffffff;
+}
+
+#backToTop:active {
+    transform: scale(0.92);
 }

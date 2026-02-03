@@ -1,17 +1,19 @@
-const btn = document.createElement("button");
-btn.id = "backToTop";
-btn.innerHTML = "↑";
-document.body.appendChild(btn);
+if (!document.getElementById('backToTop')) {
+    const btn = document.createElement("button");
+    btn.id = "backToTop";
+    btn.innerHTML = "↑";
+    document.body.appendChild(btn);
+}
 
+const backToTopBtn = document.getElementById("backToTop");
 window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        backToTopBtn.style.display = "flex";
     } else {
-        btn.style.display = "none";
+        backToTopBtn.style.display = "none";
     }
 };
-
-btn.onclick = function() {
+backToTopBtn.onclick = function() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
